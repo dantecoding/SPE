@@ -1,4 +1,5 @@
 <?php
+require_once("autoload");
 /**
  * Created by JetBrains PhpStorm.
  * User: dante
@@ -16,29 +17,42 @@ class Register
     private $org;
     private $vac;
 
+    public function __construct()
+    {
+
+        $this->as = new AddressSpecification();
+        $this->jobless = new JoblessList();
+        $this->claim = new ClaimVacancy();
+        $this->dec = new Declaration();
+        $this->regWork = new RegisteredWork();
+        $this->org = new OrganizationList();
+        $this->vac = new VacancyList();
+
+    }
+
     public function newDeclaration()
     {
 
     }
 
-    public function saveDeclaration($declaration)
+    public function saveDeclaration()
     {
-
+        $this->jobless->saveDeclaration($this->dec);
     }
 
     public function setName($name)
     {
-
+        $this->dec->setName($name);
     }
 
     public function setAddress($address)
     {
-
+        $this->dec->setAddress($address);
     }
 
     public function setInfo($job, $dateOut, $working, $stage)
     {
-
+        $this->claim->setInfo($job, $dateOut, $working, $stage);
     }
 
     public function newClaimVacancy()
@@ -48,17 +62,17 @@ class Register
 
     public function setAddressOrganization($address)
     {
-
+        $this->claim->setAddress($address);
     }
 
     public function setWork($work)
     {
-
+        $this->claim->setWork($work);
     }
 
     public function saveVacancy($vacancy)
     {
-
+        $this->vac->addVacancy($this->claim);
     }
 
 }

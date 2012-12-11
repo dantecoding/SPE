@@ -1,4 +1,5 @@
 <?php
+require_once("autoload");
 /**
  * Created by JetBrains PhpStorm.
  * User: dante
@@ -21,7 +22,7 @@ class ClaimVacancy
     {
     }
 
-    public function setInfo($work)
+    public function setInfo($info)
     {
     }
 

@@ -1,4 +1,5 @@
 <?php
+require_once("autoload");
 /**
  * Created by JetBrains PhpStorm.
  * User: dante
