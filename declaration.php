@@ -24,7 +24,13 @@ class Declaration
 
     public function setAddress($address)
     {
-        $this->address = $address;
+        $addSpec = new AddressSpecification();
+        if ($addSpec->checkAddress($address)) {
+            $this->address = $address;
+            return true;
+        } else {
+            return false;
+        }
     }
 
     public function setInfo($job, $dateOut, $working, $stage)

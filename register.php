@@ -65,9 +65,9 @@ class Register
         $this->claim->setAddress($address);
     }
 
-    public function setWork($work)
+    public function setWork($work, $post)
     {
-        $this->claim->setWork($work);
+        $this->claim->setWork($work, $post);
     }
 
     public function saveVacancy($vacancy)

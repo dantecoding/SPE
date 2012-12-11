@@ -16,14 +16,18 @@ class ClaimVacancy
 
     public function setAddress($address)
     {
+        $this->address = $address;
     }
 
-    public function setWork($work)
+    public function setWork($work, $post)
     {
+        $this->work = $work;
+        $this->post = $post;
     }
 
     public function setInfo($info)
     {
+        $this->info = $info;
     }
 
 }

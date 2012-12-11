@@ -9,9 +9,15 @@ require_once("autoload");
  */
 class AddressSpecification
 {
-    private $addressesList = array();
+    private $addressesList = array("Маршала Говорова", "Ришельевская", "Дерибасовкая", "Армейская", "Пушкинская", "Екатериниская");
 
     public function  checkAddress($address)
     {
+        foreach ($this->addressesList as $addr) {
+            if ($addr == $address)
+                return true;
+            else
+                return false;
+        }
     }
 }
