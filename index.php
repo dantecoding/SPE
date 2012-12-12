@@ -8,22 +8,24 @@ require_once("autoload.php");
  * Time: 23:52
  * To change this template use File | Settings | File Templates.
  */
-$a = new Register();
-if ($a->setName("jh6546"))
-    echo "yes";
-else
-    echo "no";
-$a->setInfo("sdf", "12-10-2012", "24", "54");
 
-echo "<br>" . $a->getDec()->getJob();
-echo "<br>" . $a->getDec()->getName();
-echo "<br>";
+
 $b = new Register();
+echo "В списке: ";
 if ($b->setName("jhg"))
     echo "yes";
-else
+else {
     echo "no";
-$b->setInfo("jh", "12-10-2012", "24", "54");
-
-echo "<br>" . $b->getDec()->getJob();
-echo "<br>" . $b->getDec()->getName();
+    echo "<br>Имя: " . $b->getDec()->getName();
+}
+//if ($b->setInfo("sdf", "12-10-2012", "24", "54")){
+//    echo "<br>Работа: " . $b->getDec()->getJob();
+//}
+//$b->saveDeclaration();
+$c = new RegisteredWork();
+echo "<br>Работа в списке: ";
+if ($c->checkWork("12")) {
+    echo "yes";
+} else {
+    echo "no";
+}

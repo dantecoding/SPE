@@ -14,11 +14,9 @@ class RegisteredWork
     public function checkWork($work)
     {
         $this->registeredWork = mysql_query("SELECT work FROM reg_work");
-
-        while ($row = mysql_fetch_assoc($this->registeredWork)) {
-            if ($row['work'] == $work) {
+        while ($result = mysql_fetch_assoc($this->registeredWork)) {
+            if ($result['work'] == $work)
                 return true;
-            }
         }
     }
 }

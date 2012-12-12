@@ -10,10 +10,15 @@ require_once("autoload.php");
  */
 class OrganizationList
 {
-    private $organizatioList = array();
+    private $organizationList = array();
 
     public function checkAddress($address)
     {
+        $this->organizationList = mysql_query("SELECT addresses FROM org_addresses");
+        while ($result = mysql_fetch_assoc($this->organizationList)) {
+            if ($result['addresses'] == $address)
+                return true;
+        }
     }
 
 }

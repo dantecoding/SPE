@@ -17,3 +17,4 @@ require_once("register.php");
 
 $con = mysql_connect("localhost", "root", "mysql");
 mysql_select_db("spe");
+mysql_query("SET NAMES utf8");

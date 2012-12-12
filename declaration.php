@@ -20,10 +20,10 @@ class Declaration
     public function setName(JoblessList $jobless, $name)
     {
         if ($jobless->checkName($name)) {
-            $this->name = $name;
-            return true;
-        } else
             return false;
+        } else
+            $this->name = $name;
+        return true;
     }
 
     public function setAddress($address, AddressSpecification $addSpec)

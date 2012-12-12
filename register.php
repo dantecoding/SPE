@@ -16,7 +16,6 @@ class Register
     private $regWork;
     private $claim;
     private $org;
-    private $vac;
 
     public function __construct()
     {
@@ -26,7 +25,6 @@ class Register
         $this->claim = new ClaimVacancy();
         $this->regWork = new RegisteredWork();
         $this->org = new OrganizationList();
-        $this->vac = new VacancyList();
         $this->dec = new Declaration();
 
     }
@@ -68,7 +66,11 @@ class Register
 
     public function setInfo($job, $dateOut, $working, $stage)
     {
-        $this->dec->setInfo($this->regWork, $job, $dateOut, $working, $stage);
+        $regWork = new RegisteredWork();
+        if ($this->dec->setInfo($regWork, $job, $dateOut, $working, $stage))
+            return true;
+        else
+            return false;
     }
 
     public function newClaimVacancy()

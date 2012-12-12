@@ -15,8 +15,8 @@ class AddressSpecification
     public function  checkAddress($address)
     {
         $this->addressesList = mysql_query("SELECT address FROM addresses");
-        foreach ($this->addressesList as $list) {
-            if ($list['address'] == $address)
+        while ($result = mysql_fetch_assoc($this->addressesList)) {
+            if ($result['address'] == $address)
                 return true;
             else
                 return false;

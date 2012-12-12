@@ -14,11 +14,12 @@ class JoblessList
 
     public function checkName($name)
     {
-        $nameFromDb = mysql_query("SELECT name FROM jobless");
+        $this->joblessList = mysql_query("SELECT name FROM jobless");
 
-        while ($row = mysql_fetch_assoc($nameFromDb)) {
-            if ($row['name'] == $name)
-                return false;
+        while ($row = mysql_fetch_assoc($this->joblessList)) {
+            if ($row['name'] == $name) {
+                return true;
+            }
         }
     }
 
@@ -28,6 +29,6 @@ class JoblessList
 
     public function saveDeclaration(Declaration $declaration)
     {
-        echo $declaration->getAddress() + $declaration->getName();
+        echo $declaration->getAddress() + $declaration->getName() + $declaration->getWork();
     }
 }
