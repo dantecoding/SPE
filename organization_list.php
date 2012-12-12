@@ -1,5 +1,6 @@
 <?php
-require_once("autoload");
+require_once("autoload.php");
+
 /**
  * Created by JetBrains PhpStorm.
  * User: dante

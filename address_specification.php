@@ -1,5 +1,6 @@
 <?php
-require_once("autoload");
+require_once("autoload.php");
+
 /**
  * Created by JetBrains PhpStorm.
  * User: dante
@@ -9,12 +10,13 @@ require_once("autoload");
  */
 class AddressSpecification
 {
-    private $addressesList = array("Маршала Говорова", "Ришельевская", "Дерибасовкая", "Армейская", "Пушкинская", "Екатериниская");
+    private $addressesList;
 
     public function  checkAddress($address)
     {
-        foreach ($this->addressesList as $addr) {
-            if ($addr == $address)
+        $this->addressesList = mysql_query("SELECT address FROM addresses");
+        foreach ($this->addressesList as $list) {
+            if ($list['address'] == $address)
                 return true;
             else
                 return false;

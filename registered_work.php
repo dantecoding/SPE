@@ -1,5 +1,5 @@
 <?php
-require_once("autoload");
+require_once("autoload.php");
 /**
  * Created by JetBrains PhpStorm.
  * User: dante
@@ -13,5 +13,12 @@ class RegisteredWork
 
     public function checkWork($work)
     {
+        $this->registeredWork = mysql_query("SELECT work FROM reg_work");
+
+        while ($row = mysql_fetch_assoc($this->registeredWork)) {
+            if ($row['work'] == $work) {
+                return true;
+            }
+        }
     }
 }

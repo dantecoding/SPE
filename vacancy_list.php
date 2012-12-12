@@ -1,5 +1,5 @@
 <?php
-require_once("autoload");
+require_once("autoload.php");
 /**
  * Created by JetBrains PhpStorm.
  * User: dante
@@ -11,9 +11,9 @@ class VacancyList
 {
     private $vacancyList = array();
 
-    public function addVacancy($vacancy)
+    public function addVacancy(ClaimVacancy $vacancy)
     {
-        print_r($vacancy);
+
     }
 
 }

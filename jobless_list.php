@@ -1,5 +1,6 @@
 <?php
-require_once("autoload");
+require_once("autoload.php");
+
 /**
  * Created by JetBrains PhpStorm.
  * User: dante
@@ -13,13 +14,20 @@ class JoblessList
 
     public function checkName($name)
     {
+        $nameFromDb = mysql_query("SELECT name FROM jobless");
+
+        while ($row = mysql_fetch_assoc($nameFromDb)) {
+            if ($row['name'] == $name)
+                return false;
+        }
     }
 
     public function checkInfo($job, $dateOut, $working, $workingStage)
     {
     }
 
-    public function saveDeclaration($declaration)
+    public function saveDeclaration(Declaration $declaration)
     {
+        echo $declaration->getAddress() + $declaration->getName();
     }
 }
