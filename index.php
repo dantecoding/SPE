@@ -12,7 +12,7 @@ require_once("autoload.php");
 
 $b = new Register();
 echo "В списке: ";
-if ($b->setName("jhg"))
+if ($b->setName("jhg41"))
     echo "yes";
 else {
     echo "no";
@@ -24,7 +24,7 @@ else {
 //$b->saveDeclaration();
 $c = new RegisteredWork();
 echo "<br>Работа в списке: ";
-if ($c->checkWork("12")) {
+if ($c->checkWork("123")) {
     echo "yes";
 } else {
     echo "no";

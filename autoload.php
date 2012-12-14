@@ -15,6 +15,6 @@ require_once("registered_work.php");
 require_once("vacancy_list.php");
 require_once("register.php");
 
-$con = mysql_connect("localhost", "root", "mysql");
+$con = mysql_connect("localhost", "root", "101191");
 mysql_select_db("spe");
 mysql_query("SET NAMES utf8");

@@ -49,38 +49,32 @@ class Declaration
         }
     }
 
-    public
-    function getName()
+    public function getName()
     {
         return $this->name;
     }
 
-    public
-    function getAddress()
+    public function getAddress()
     {
         return $this->address;
     }
 
-    public
-    function getJob()
+    public function getJob()
     {
         return $this->job;
     }
 
-    public
-    function workingStage()
+    public function workingStage()
     {
         return $this->workingStage;
     }
 
-    public
-    function getWork()
+    public function getWork()
     {
         return $this->working;
     }
 
-    public
-    function getDateOut()
+    public function getDateOut()
     {
         return $this->dateOut;
     }
