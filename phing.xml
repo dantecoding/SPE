@@ -1,19 +1,36 @@
-<project name="make_project" basedir=".." default="build">
-    <property name="src_dir" value="protected/" override="false"/>
-    <property name="res_dir" value="public/" override="false"/>
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Phing example" default="default">
+    <property name="build.dir" value="." />
 
-    <target name="clear_cache_dir">
-        <echo>Очищаем директории кэша</echo>
-        <delete>
-            <fileset dir="${res_dir}/assets/">
-                <include name="**"/>
-            </fileset>
-            <fileset dir="${src_dir}/runtime/">
-                <include name="**"/>
-            </fileset>
-        </delete>
+    <!-- ============================================ -->
+    <!-- (DEFAULT) Target: default                    -->
+    <!-- ============================================ -->
+    <target name="default" depends="lint.legacy, run.tests">
+        <echo msg="All done." />
     </target>
 
-    <target name="build" depends="clear_cache_dir">
-     </target>
+    <!-- ============================================ -->
+    <!-- Target: lint.legacy                          -->
+    <!-- ============================================ -->
+    <target name="lint.legacy">
+        <phplint>
+            <fileset dir="${build.dir}">
+                <include name="**/*.php" />
+            </fileset>
+        </phplint>
+    </target>
+
+    <!-- ============================================ -->
+    <!-- Target: run.tests                            -->
+    <!-- ============================================ -->
+    <target name="run.tests">
+        <phpunit haltonfailure="true" haltonerror="true">
+            <formatter type="plain" usefile="false" />
+            <batchtest>
+                <fileset dir="${build.dir}/tests">
+                    <include name="Test*.php" />
+                </fileset>
+            </batchtest>
+        </phpunit>
+    </target>
 </project>

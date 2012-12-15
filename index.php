@@ -8,6 +8,8 @@ require_once("autoload.php");
  * Time: 23:52
  * To change this template use File | Settings | File Templates.
  */
+
+
 $b = new Register();
 echo "В списке: ";
 if ($b->setName("789"))
@@ -22,7 +24,7 @@ else {
 //$b->saveDeclaration();
 $c = new RegisteredWork();
 echo "<br>Работа в списке: ";
-if ($c->checkWork("7891")) {
+if ($c->checkWork("7841")) {
     echo "yes";
 } else {
     echo "no";
