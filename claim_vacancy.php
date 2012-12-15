@@ -56,7 +56,4 @@ class ClaimVacancy
     {
         return $this->info;
     }
-
-
-
 }
