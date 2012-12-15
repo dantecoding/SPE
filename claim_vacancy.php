@@ -20,15 +20,43 @@ class ClaimVacancy
         $this->address = $address;
     }
 
-    public function setWork($work, $post)
+    public function setWork(RegisteredWork $regWork,$work, $post)
     {
-        $this->work = $work;
-        $this->post = $post;
+        if ($regWork->checkWork($work))
+        {
+            $this->work = $work;
+            $this->post = $post;
+            return true;
+        }
+        else
+            return false;
     }
 
     public function setInfo($info)
     {
         $this->info = $info;
     }
+
+    public function getPost()
+    {
+        return $this->post;
+    }
+
+    public function getWork()
+    {
+        return $this->work;
+    }
+
+    public function getAddress()
+    {
+        return $this->address;
+    }
+
+    public function getInfo()
+    {
+        return $this->info;
+    }
+
+
 
 }

@@ -11,12 +11,15 @@ class RegisteredWork
 {
     private $registeredWork = array();
 
+
     public function checkWork($work)
     {
+        $ret = false;
         $this->registeredWork = mysql_query("SELECT work FROM reg_work");
         while ($result = mysql_fetch_assoc($this->registeredWork)) {
             if ($result['work'] == $work)
-                return true;
+                $ret = true;
         }
+        return $ret;
     }
 }

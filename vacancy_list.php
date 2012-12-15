@@ -13,6 +13,7 @@ class VacancyList
 
     public function addVacancy(ClaimVacancy $vacancy)
     {
+        return true;
 
     }
 

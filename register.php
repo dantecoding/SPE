@@ -85,7 +85,8 @@ class Register
 
     public function setWork($work, $post)
     {
-        $this->claim->setWork($work, $post);
+        $regWork = new RegisteredWork();
+        $this->claim->setWork($regWork,$work, $post);
     }
 
     public function saveVacancy()
