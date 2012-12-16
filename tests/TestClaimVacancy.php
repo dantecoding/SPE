@@ -1,5 +1,5 @@
 <?php
-require_once '../autoload.php';
+require_once 'autoload.php';
 /**
  * Created by JetBrains PhpStorm.
  * User: dante
@@ -14,8 +14,8 @@ class ClaimVacancyTest extends PHPUnit_Framework_TestCase
      */
     public function testSetWorkTrue($work, $post)
     {
-        $claim = new ClaimVacancy();
-        $regWork = new RegisteredWork();
+        $claim = new SPE\ClaimVacancy();
+        $regWork = new SPE\RegisteredWork();
         $this->assertTrue($claim->setWork($regWork, $work, $post));
         $this->assertEquals($post, $claim->getPost());
     }
@@ -34,8 +34,8 @@ class ClaimVacancyTest extends PHPUnit_Framework_TestCase
      */
     public function testSetWorkFalse($work, $post)
     {
-        $claim = new ClaimVacancy();
-        $regWork = new RegisteredWork();
+        $claim = new SPE\ClaimVacancy();
+        $regWork = new SPE\RegisteredWork();
         $this->assertFalse($claim->setWork($regWork, $work, $post));
     }
 
@@ -55,7 +55,7 @@ class ClaimVacancyTest extends PHPUnit_Framework_TestCase
 
     public function testSetInfo($info)
     {
-        $claim = new ClaimVacancy();
+        $claim = new SPE\ClaimVacancy();
         $claim->setInfo($info);
         $this->assertEquals($info, $claim->getInfo());
     }
@@ -76,7 +76,7 @@ class ClaimVacancyTest extends PHPUnit_Framework_TestCase
 
     public function testSetAddress($address)
     {
-        $claim = new ClaimVacancy();
+        $claim = new SPE\ClaimVacancy();
         $claim->setAddress($address);
         $this->assertEquals($address,$claim->getAddress());
     }

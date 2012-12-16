@@ -1,4 +1,5 @@
 <?php
+namespace SPE;
 require_once("autoload.php");
 
 /**
@@ -14,12 +15,12 @@ class AddressSpecification
 
     public function  checkAddress($address)
     {
+        $ret = false;
         $this->addressesList = mysql_query("SELECT address FROM addresses");
         while ($result = mysql_fetch_assoc($this->addressesList)) {
             if ($result['address'] == $address)
-                return true;
-            else
-                return false;
+              $ret = true;
         }
+        return $ret;
     }
 }

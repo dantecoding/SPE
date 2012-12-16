@@ -1,4 +1,5 @@
 <?php
+namespace SPE;
 require_once("autoload.php");
 
 /**
@@ -8,6 +9,8 @@ require_once("autoload.php");
  * Time: 18:49
  * To change this template use File | Settings | File Templates.
  */
+
+
 class Register
 {
     private $as;
@@ -86,7 +89,7 @@ class Register
     public function setWork($work, $post)
     {
         $regWork = new RegisteredWork();
-        $this->claim->setWork($regWork,$work, $post);
+        $this->claim->setWork($regWork, $work, $post);
     }
 
     public function saveVacancy()

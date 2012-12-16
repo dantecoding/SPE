@@ -1,4 +1,5 @@
 <?php
+namespace SPE;
 require_once("autoload.php");
 
 /**
@@ -14,11 +15,13 @@ class OrganizationList
 
     public function checkAddress($address)
     {
+        $ret =false;
         $this->organizationList = mysql_query("SELECT addresses FROM org_addresses");
         while ($result = mysql_fetch_assoc($this->organizationList)) {
             if ($result['addresses'] == $address)
-                return true;
+                $ret = true;
         }
+        return $ret;
     }
 
 }

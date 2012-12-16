@@ -8,6 +8,8 @@ require_once("autoload.php");
  * Time: 23:52
  * To change this template use File | Settings | File Templates.
  */
+use SPE\Register;
+use SPE\RegisteredWork;
 
 
 $b = new Register();

@@ -1,5 +1,5 @@
 <?php
-require_once '../autoload.php';
+require_once 'autoload.php';
 /**
  * Created by JetBrains PhpStorm.
  * User: dante
@@ -14,7 +14,7 @@ class RegisteredWorkTest extends PHPUnit_Framework_TestCase
      */
     public function testCheckWork($a, $b)
     {
-        $my = new RegisteredWork();
+        $my = new SPE\RegisteredWork();
         $this->assertTrue($my->checkWork($a));
         $this->assertFalse($my->checkWork($b));
     }
