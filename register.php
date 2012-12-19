@@ -83,7 +83,8 @@ class Register
 
     public function setAddressOrganization($address)
     {
-        $this->claim->setAddress($address);
+        $org = new OrganizationList();
+        $this->claim->setAddress($org, $address);
     }
 
     public function setWork($work, $post)

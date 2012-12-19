@@ -1,5 +1,5 @@
 <?php
-require_once("autoload.php");
+require_once "autoload.php";
 
 /**
  * Created by JetBrains PhpStorm.
@@ -14,18 +14,19 @@ use SPE\RegisteredWork;
 
 $b = new Register();
 echo "В списке: ";
-if ($b->setName("789"))
+if ($b->setName("7891"))
     echo "yes";
 else {
     echo "no";
-    echo "<br>Имя: " . $b->getDec()->getName();
+    echo "\nИмя: " . $b->getDec()->getName() . "\n";
+    //echo "Ded: ".$b->saveDeclaration()."\n";
 }
 //if ($b->setInfo("sdf", "12-10-2012", "24", "54")){
 //    echo "<br>Работа: " . $b->getDec()->getJob();
 //}
 //$b->saveDeclaration();
 $c = new RegisteredWork();
-echo "<br>Работа в списке: ";
+echo "Работа в списке: ";
 if ($c->checkWork("7841")) {
     echo "yes";
 } else {

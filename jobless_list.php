@@ -26,6 +26,7 @@ class JoblessList
 
     public function checkInfo($job, $dateOut, $working, $workingStage)
     {
+        return true;
     }
 
     public function saveDeclaration(Declaration $declaration)
