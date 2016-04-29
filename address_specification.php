@@ -1,6 +1,8 @@
 <?php
+
 namespace SPE;
-require_once("autoload.php");
+
+require_once 'autoload.php';
 
 /**
  * Created by JetBrains PhpStorm.
@@ -9,18 +11,20 @@ require_once("autoload.php");
  * Time: 19:29
  * To change this template use File | Settings | File Templates.
  */
-class AddressSpecification
+class address_specification
 {
     private $addressesList;
 
-    public function  checkAddress($address)
+    public function checkAddress($address)
     {
         $ret = false;
-        $this->addressesList = mysql_query("SELECT address FROM addresses");
+        $this->addressesList = mysql_query('SELECT address FROM addresses');
         while ($result = mysql_fetch_assoc($this->addressesList)) {
-            if ($result['address'] == $address)
-              $ret = true;
+            if ($result['address'] == $address) {
+                $ret = true;
+            }
         }
+
         return $ret;
     }
 }

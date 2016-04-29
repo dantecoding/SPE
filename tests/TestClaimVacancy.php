@@ -1,4 +1,5 @@
 <?php
+
 require_once 'autoload.php';
 /**
  * Created by JetBrains PhpStorm.
@@ -22,11 +23,11 @@ class ClaimVacancyTest extends PHPUnit_Framework_TestCase
 
     public function providerSetWork()
     {
-        return array(
-            array("sdf", "prog"), //Test value is true
-            array("jh", "buh"),
-            array("123", "45")
-        );
+        return [
+            ['sdf', 'prog'], //Test value is true
+            ['jh', 'buh'],
+            ['123', '45'],
+        ];
     }
 
     /**
@@ -41,18 +42,17 @@ class ClaimVacancyTest extends PHPUnit_Framework_TestCase
 
     public function providerSetWorkFalse()
     {
-        return array(
-            array(15, "sdf"), // Test integer value
-            array(15.6, "dfggd"), //Test float value
-            array("", "") // Test empty value
-        );
+        return [
+            [15, 'sdf'], // Test integer value
+            [15.6, 'dfggd'], //Test float value
+            ['', ''], // Test empty value
+        ];
     }
 
     /**
      * @param $info
      * @dataProvider providerSetInfo
      */
-
     public function testSetInfo($info)
     {
         $claim = new SPE\ClaimVacancy();
@@ -62,31 +62,30 @@ class ClaimVacancyTest extends PHPUnit_Framework_TestCase
 
     public function providerSetInfo()
     {
-        return array(
-            array("one"),
-            array("two"),
-            array("three")
-        );
+        return [
+            ['one'],
+            ['two'],
+            ['three'],
+        ];
     }
 
     /**
      * @param $address
      * @dataProvider providerAddress
      */
-
     public function testSetAddress($address)
     {
         $claim = new SPE\ClaimVacancy();
         $claim->setAddress($address);
-        $this->assertEquals($address,$claim->getAddress());
+        $this->assertEquals($address, $claim->getAddress());
     }
 
     public function providerAddress()
     {
-        return array(
-            array("Маршала Говорова"),
-            array("Дерибасовкая"),
-            array("Шевченко")
-        );
+        return [
+            ['Маршала Говорова'],
+            ['Дерибасовкая'],
+            ['Шевченко'],
+        ];
     }
 }

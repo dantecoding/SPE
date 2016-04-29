@@ -1,6 +1,8 @@
 <?php
+
 namespace SPE;
-require_once("autoload.php");
+
+require_once 'autoload.php';
 
 /**
  * Created by JetBrains PhpStorm.
@@ -9,19 +11,20 @@ require_once("autoload.php");
  * Time: 19:58
  * To change this template use File | Settings | File Templates.
  */
-class OrganizationList
+class organization_list
 {
-    private $organizationList = array();
+    private $organizationList = [];
 
     public function checkAddress($address)
     {
-        $ret =false;
-        $this->organizationList = mysql_query("SELECT addresses FROM org_addresses");
+        $ret = false;
+        $this->organizationList = mysql_query('SELECT addresses FROM org_addresses');
         while ($result = mysql_fetch_assoc($this->organizationList)) {
-            if ($result['addresses'] == $address)
+            if ($result['addresses'] == $address) {
                 $ret = true;
+            }
         }
+
         return $ret;
     }
-
 }

@@ -1,6 +1,8 @@
 <?php
+
 namespace SPE;
-require_once("autoload.php");
+
+require_once 'autoload.php';
 /**
  * Created by JetBrains PhpStorm.
  * User: dante
@@ -8,14 +10,12 @@ require_once("autoload.php");
  * Time: 19:57
  * To change this template use File | Settings | File Templates.
  */
-class VacancyList
+class vacancy_list
 {
-    private $vacancyList = array();
+    private $vacancyList = [];
 
     public function addVacancy(ClaimVacancy $vacancy)
     {
         return true;
-
     }
-
 }

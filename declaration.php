@@ -1,6 +1,8 @@
 <?php
+
 namespace SPE;
-require_once("autoload.php");
+
+require_once 'autoload.php';
 /**
  * Created by JetBrains PhpStorm.
  * User: dante
@@ -8,7 +10,7 @@ require_once("autoload.php");
  * Time: 19:04
  * To change this template use File | Settings | File Templates.
  */
-class Declaration
+class declaration
 {
     private $joblestList;
     private $name;
@@ -22,8 +24,10 @@ class Declaration
     {
         if ($jobless->checkName($name)) {
             return false;
-        } else
+        } else {
             $this->name = $name;
+        }
+
         return true;
     }
 
@@ -31,6 +35,7 @@ class Declaration
     {
         if ($addSpec->checkAddress($address)) {
             $this->address = $address;
+
             return true;
         } else {
             return false;
@@ -44,6 +49,7 @@ class Declaration
             $this->dateOut = $dateOut;
             $this->working = $working;
             $this->workingStage = $stage;
+
             return true;
         } else {
             return false;
@@ -79,5 +85,4 @@ class Declaration
     {
         return $this->dateOut;
     }
-
 }

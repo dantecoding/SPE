@@ -1,6 +1,8 @@
 <?php
+
 namespace SPE;
-require_once("autoload.php");
+
+require_once 'autoload.php';
 
 /**
  * Created by JetBrains PhpStorm.
@@ -9,13 +11,13 @@ require_once("autoload.php");
  * Time: 19:32
  * To change this template use File | Settings | File Templates.
  */
-class JoblessList
+class jobless_list
 {
-    private $joblessList = array();
+    private $joblessList = [];
 
     public function checkName($name)
     {
-        $this->joblessList = mysql_query("SELECT name FROM jobless");
+        $this->joblessList = mysql_query('SELECT name FROM jobless');
 
         while ($row = mysql_fetch_assoc($this->joblessList)) {
             if ($row['name'] == $name) {

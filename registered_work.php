@@ -1,6 +1,8 @@
 <?php
+
 namespace SPE;
-require_once("autoload.php");
+
+require_once 'autoload.php';
 /**
  * Created by JetBrains PhpStorm.
  * User: dante
@@ -8,19 +10,20 @@ require_once("autoload.php");
  * Time: 19:38
  * To change this template use File | Settings | File Templates.
  */
-class RegisteredWork
+class registered_work
 {
-    private $registeredWork = array();
-
+    private $registeredWork = [];
 
     public function checkWork($work)
     {
         $ret = false;
-        $this->registeredWork = mysql_query("SELECT work FROM reg_work");
+        $this->registeredWork = mysql_query('SELECT work FROM reg_work');
         while ($result = mysql_fetch_assoc($this->registeredWork)) {
-            if ($result['work'] == $work)
+            if ($result['work'] == $work) {
                 $ret = true;
+            }
         }
+
         return $ret;
     }
 }
