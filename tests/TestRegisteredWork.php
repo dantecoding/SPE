@@ -1,4 +1,5 @@
 <?php
+
 require_once 'autoload.php';
 /**
  * Created by JetBrains PhpStorm.
@@ -21,10 +22,10 @@ class RegisteredWorkTest extends PHPUnit_Framework_TestCase
 
     public function provider()
     {
-        return array(
-            array("123",""),
-            array("jh","4"),
-            array("sdf",45)
-        );
+        return [
+            ['123', ''],
+            ['jh', '4'],
+            ['sdf', 45],
+        ];
     }
 }

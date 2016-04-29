@@ -1,6 +1,8 @@
 <?php
+
 namespace SPE;
-require_once("autoload.php");
+
+require_once 'autoload.php';
 
 /**
  * Created by JetBrains PhpStorm.
@@ -9,7 +11,7 @@ require_once("autoload.php");
  * Time: 19:54
  * To change this template use File | Settings | File Templates.
  */
-class ClaimVacancy
+class claim_vacancy
 {
     private $address;
     private $work;
@@ -21,16 +23,16 @@ class ClaimVacancy
         $this->address = $address;
     }
 
-    public function setWork(RegisteredWork $regWork,$work, $post)
+    public function setWork(RegisteredWork $regWork, $work, $post)
     {
-        if ($regWork->checkWork($work))
-        {
+        if ($regWork->checkWork($work)) {
             $this->work = $work;
             $this->post = $post;
+
             return true;
-        }
-        else
+        } else {
             return false;
+        }
     }
 
     public function setInfo($info)

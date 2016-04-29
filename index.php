@@ -1,7 +1,8 @@
 <?php
-require_once "autoload.php";
 
-/**
+require_once 'autoload.php';
+
+/*
  * Created by JetBrains PhpStorm.
  * User: dante
  * Date: 11.12.12
@@ -11,14 +12,13 @@ require_once "autoload.php";
 use SPE\Register;
 use SPE\RegisteredWork;
 
-
 $b = new Register();
-echo "В списке: ";
-if ($b->setName("7891"))
-    echo "yes";
-else {
-    echo "no";
-    echo "\nИмя: " . $b->getDec()->getName() . "\n";
+echo 'В списке: ';
+if ($b->setName('7891')) {
+    echo 'yes';
+} else {
+    echo 'no';
+    echo "\nИмя: ".$b->getDec()->getName()."\n";
     //echo "Ded: ".$b->saveDeclaration()."\n";
 }
 //if ($b->setInfo("sdf", "12-10-2012", "24", "54")){
@@ -26,9 +26,9 @@ else {
 //}
 //$b->saveDeclaration();
 $c = new RegisteredWork();
-echo "Работа в списке: ";
-if ($c->checkWork("7841")) {
-    echo "yes";
+echo 'Работа в списке: ';
+if ($c->checkWork('7841')) {
+    echo 'yes';
 } else {
-    echo "no";
+    echo 'no';
 }
